@@ -1,12 +1,8 @@
-     //   {name: 'Alex Ung', profession: 'Software Engineer at Accenture'},
-     // {name: 'Derrick Ung', profession: 'Economic Analyst at the County of Riverside'},
-     //  {name: 'Nareth Ung', profession: 'Network Engineer at Sempra Energies'},
-     //  {name: 'Vann Heng', profession: 'Materials Science Engineer at Boeing'}
-  var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute']);
 
   myApp.config(function($routeProvider){
     $routeProvider
-      .when('/',
+      .when('/', // can also pass in a parameter via '/:familyMemberID'
       {
         controller: 'SimpleController',
         templateUrl: 'partials/view1.html'
