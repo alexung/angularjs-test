@@ -1,18 +1,38 @@
 <!DOCTYPE html>
-<html data-ng-app=''>
+<html data-ng-app='myApp'>
   <head>
     <title>Learning AngularJS</title>
   </head>
-  <body data-ng-init="family=[{name: 'Alex Ung', profession: 'Software Engineer at Accenture'}, {name: 'Derrick Ung', profession: 'Economic Analyst at the County of Riverside'}, {name: 'Nareth Ung', profession: 'Network Engineer at Sempra Energies'}, {name: 'Vann Heng', profession: 'Materials Science Engineer at Boeing'}]">
+
+ <body>
+  <div data-ng-controller="SimpleController">
     Name:
     <br>
     <input type='text' data-ng-model="name"> {{ name }}
     <br>
 
-    <ul>
-      <li data-ng-repeat="familyMember in family | filter: name">{{ familyMember.name }} -- {{ familyMember.profession}}</li>
-    </ul>
+      <ul>
+        <li data-ng-repeat="familyMember in family | filter: name | orderBy: 'profession'">{{ familyMember.name | uppercase }} -- {{ familyMember.profession | lowercase }}</li>
+      </ul>
+    </div>
+
+
 
     <script src='javascript/angular.min.js'></script>
+
+    <script>
+    var myApp = angular.module('myApp', []).controller('SimpleController', function($scope){
+
+      $scope.family = [
+     {name: 'Alex Ung', profession: 'Software Engineer at Accenture'},
+     {name: 'Derrick Ung', profession: 'Economic Analyst at the County of Riverside'},
+      {name: 'Nareth Ung', profession: 'Network Engineer at Sempra Energies'},
+      {name: 'Vann Heng', profession: 'Materials Science Engineer at Boeing'}
+  ];
+
+    });
+
+    </script>
+    <!--<script src='javascript/application.js'></script>-->
   </body>
 </html>
