@@ -1,0 +1,22 @@
+<div class='container'>
+  <h2>View 1</h2>
+  Name:
+  <br>
+  <input type="text" data-ng-model="filter.name">
+  <br>
+  <ul>
+    <li data-ng-repeat="familyMember in family | filter: filter.name | orderBy: profession">{{ familyMember.name | uppercase }} -- {{ familyMember.profession | lowercase }}</li>
+  </ul>
+  <br>
+  Family Member Name:<br>
+  <input type="text" data-ng-model="newFamilyMember.name">
+  <br>
+  Family Member Profession:<br>
+  <input type='text' data-ng-model='newFamilyMember.profession'>
+  <br>
+  <button data-ng-click="addFamilyMember()">Add Family Member</button>
+  <br>
+  <a href='#/view2'>View 2</a>
+
+
+</div>
