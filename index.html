@@ -10,7 +10,7 @@
     <br>
 
     <ul>
-      <li data-ng-repeat="familyMember in family | filter: name | orderBy: 'profession'">{{ familyMember.name }} -- {{ familyMember.profession}}</li>
+      <li data-ng-repeat="familyMember in family | filter: name | orderBy: 'profession'">{{ familyMember.name | uppercase }} -- {{ familyMember.profession | lowercase }}</li>
     </ul>
 
     <script src='javascript/angular.min.js'></script>
