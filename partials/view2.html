@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>View 2</h2>
+  Profession:
+  <br>
+  <input type="text" data-ng-model="profession">
+  <br>
+  <ul>
+    <li data-ng-repeat="familyMember in family | filter: profession | orderBy: profession">{{ familyMember.name | uppercase }} -- {{ familyMember.profession | lowercase }}</li>
+  </ul>
+  <br>
+  <a href='#/'>View 1</a>
+</div>
