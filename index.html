@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html data-ng-app=''>
+  <head>
+    <title>Learning AngularJS</title>
+  </head>
+  <body data-ng-init="family=[{name: 'Alex Ung', profession: 'Software Engineer at Accenture'}, {name: 'Derrick Ung', profession: 'Economic Analyst at the County of Riverside'}, {name: 'Nareth Ung', profession: 'Network Engineer at Sempra Energies'}, {name: 'Vann Heng', profession: 'Materials Science Engineer at Boeing'}]">
+    Name:
+    <br>
+    <input type='text' data-ng-model="name"> {{ name }}
+    <br>
+
+    <ul>
+      <li data-ng-repeat="familyMember in family | filter: name">{{ familyMember.name }} -- {{ familyMember.profession}}</li>
+    </ul>
+
+    <script src='javascript/angular.min.js'></script>
+  </body>
+</html>
